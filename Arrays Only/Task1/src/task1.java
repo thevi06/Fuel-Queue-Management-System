@@ -282,4 +282,49 @@ public class task1 {
             System.out.println("Invalid input");
         }
     }
+
+    /*Remove served customer*/
+    public static void RemoveServedCustomer(String[] ThePump) {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter the Queue number :");
+        int QueueNO = scn.nextInt();
+
+        if (QueueNO == 1) {
+            if(ThePump[0]==null){
+                System.out.println("There is no person in queue 1");
+            }else {
+                for (int x = 0; x < 6; x++) {
+                    ThePump[x] = ThePump[x + 1];
+                }
+                FuelStock = FuelStock - 10;
+                System.out.println("Served and removed from Queue 1");
+            }
+        } else if (QueueNO == 2) {
+            if(ThePump[7]==null){
+                System.out.println("There is no person in queue 2");
+            }else {
+                for (int x = 7; x < 13; x++) {
+                    ThePump[x] = ThePump[x + 1];
+                }
+                FuelStock = FuelStock - 10;
+                System.out.println("Served and removed from Queue 2");
+            }
+        } else if (QueueNO == 3) {
+            if(ThePump[14]==null){
+                System.out.println("There is no person in queue 3");
+            }else {
+                for (int x = 14; x < 20; x++) {
+                    ThePump[x] = ThePump[x + 1];
+                }
+                FuelStock = FuelStock - 10;
+                System.out.println("Served and removed from Queue 3");
+            }
+        } else {
+            System.out.println("Invalid input");
+        }
+        if (FuelStock <= 500) {
+            System.out.println("****Remaining fuel amount is "+FuelStock+"L ****");
+        }
+
+    }
 }
