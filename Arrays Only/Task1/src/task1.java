@@ -155,4 +155,74 @@ public class task1 {
             }
         }
     }
+
+    //add customers to Queue
+    public static void AddCustomers(String[] Pump) {
+        Scanner scn = new Scanner(System.in);
+
+        for (int i = 1; i > -1; i++) {
+
+            System.out.println("Enter the Pump number (1-3) or Press 0 to come back to menu  :");
+            int PumpNo = scn.nextInt();
+
+            if (PumpNo == 1) {
+                for(int c=0;c<6;c++) {
+                    if (Pump[5] == null) {
+                        for (int w = 0; w < 6; w++) {
+                            if (Pump[w] == null) {
+                                System.out.println("Enter customer name  :");
+                                Pump[w] = scn.next();
+                                System.out.println(Pump[w] + " added to the Queue 1 successfully");
+                                break;
+                            }
+                        }
+                    } else {
+                        System.out.println("Queue 1 is full");
+                        break;
+                    }break;
+                }
+
+            } else if (PumpNo == 2) {
+                for(int c=7;c<13;c++) {
+                    if (Pump[12] == null) {
+                        for (int w = 7; w < 13; w++) {
+                            if (Pump[w] == null) {
+                                System.out.println("Enter customer name  :");
+                                Pump[w] = scn.next();
+                                System.out.println(Pump[w] + " added to the Queue 2 successfully");
+                                break;
+                            }
+                        }
+                    } else {
+                        System.out.println("Queue 2 is full");
+                        break;
+                    }break;
+                }
+
+            } else if (PumpNo == 3) {
+                for(int c=14;c<20;c++) {
+                    if (Pump[19] == null) {
+                        for (int w = 14; w < 21; w++) {
+                            if (Pump[w] == null) {
+                                System.out.println("Enter customer name  :");
+                                Pump[w] = scn.next();
+                                System.out.println(Pump[w] + " added to the Queue 3 successfully");
+                                break;
+                            }
+                        }
+                    } else {
+                        System.out.println("Queue 3 is full");
+                        break;
+                    }break;
+                }
+
+            } else if (PumpNo == 0) {
+                break;
+
+            } else {
+                System.out.println("Invalid input");
+                break;
+            }
+        }
+    }
 }
