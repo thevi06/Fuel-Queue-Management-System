@@ -408,4 +408,72 @@ public class task1 {
             System.out.println("invalid input");
         }
     }
+
+    /*Remaining fuel stock*/
+    public static void RemainingFuel() {
+        System.out.println("Remaining Fuel stock is " + FuelStock + " liters");
+    }
+
+    /*add fuel stock*/
+    public static void ADDFuel() {
+        Scanner scn = new Scanner(System.in);
+
+        System.out.println("How many liters do you want to add :");
+        double FuelAmount = scn.nextDouble();
+
+        FuelStock += FuelAmount;
+        System.out.println("Successfully added");
+        System.out.println("Current stock is "+FuelStock+" L");
+
+    }
+
+    /*Store Program Data into file.*/
+    public static void StoreDataIntoFile(String[] ThePump){
+
+        File Store_data = new File("Fuel_details.txt");
+        try {
+            PrintStream write = new PrintStream(Store_data);
+            write.println("Pump 1");
+
+            for (int i=0;i<6;i++){
+                write.println(ThePump[i]);
+            }
+
+            write.println("Pump 2");
+
+            for (int i=7;i<13;i++){
+                write.println(ThePump[i]);
+            }
+
+            write.println("Pump 3");
+
+            for (int i=14;i<20;i++){
+                write.println(ThePump[i]);
+            }
+            System.out.println("Saved successfully...!");
+            write.close();
+        } catch (FileNotFoundException e) {
+            /*throw new RuntimeException(e);*/
+        }
+
+
+    }
+
+    /*Load Program Data from file.*/
+    public static void LoadData(String[] ThePump)throws IOException{
+
+            /*File Store_data = new File("Fuel_details.txt");
+            Scanner scn = new Scanner(Store_data);*/
+
+        FileReader f = new FileReader("Fuel_details.txt");
+        BufferedReader b = new BufferedReader(f);
+
+        String i ;
+        while((i = b.readLine()) != null) {
+            System.out.println((String) i);
+        }
+        b.close();
+        f.close();
+
+    }
 }
