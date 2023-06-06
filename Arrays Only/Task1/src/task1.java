@@ -225,4 +225,61 @@ public class task1 {
             }
         }
     }
+
+    /*Remove customer from Queue*/
+    public static void RemoveCustomers(String[] ThePump) {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Enter the Queue number :");
+        int Qnumber = scn.nextInt();
+
+        if (Qnumber == 1) {
+            System.out.println("Enter the position of the queue you wish to remove  :");
+            int RemoName = scn.nextInt();
+            if (RemoName >= 7) {
+                System.out.println("invalid input.There are maximum 6 people in the queue");
+            } else {
+                if (ThePump[RemoName - 1] == null) {
+                    System.out.println("There is no person in that location");
+                } else {
+                    for (int x = RemoName - 1; x < 6; x++) {
+                        ThePump[x] = ThePump[x + 1];
+                    }
+                    System.out.println("No " + RemoName + " removed from Queue 1");
+                }
+            }
+
+        } else if (Qnumber == 2) {
+            System.out.println("Enter the position of the queue you wish to remove  :");
+            int RemoName = scn.nextInt();
+            if (RemoName >= 7) {
+                System.out.println("invalid input.There are maximum 6 people in the queue");
+            }else {
+                if (ThePump[RemoName +6] == null) {
+                    System.out.println("There is no person in that location");
+                }else {
+                    for (int x = RemoName + 6; x < 13; x++) {
+                        ThePump[x] = ThePump[x + 1];
+                    }
+                    System.out.println("No " + RemoName + " removed from Queue 2");
+                }
+            }
+        } else if (Qnumber == 3) {
+            System.out.println("Enter the position of the queue you wish to remove  :");
+            int RemoName = scn.nextInt();
+            if (RemoName >= 7) {
+                System.out.println("invalid input.There are maximum 6 people in the queue");
+            }else {
+                if (ThePump[RemoName +13] == null) {
+                    System.out.println("There is no person in that location");
+                } else {
+                    for (int x = RemoName + 13; x < 20; x++) {
+                        ThePump[x] = ThePump[x + 1];
+                    }
+                    System.out.println("No " + RemoName + " removed from Queue 3");
+                }
+            }
+        } else {
+            System.out.println("Invalid input");
+        }
+    }
 }
