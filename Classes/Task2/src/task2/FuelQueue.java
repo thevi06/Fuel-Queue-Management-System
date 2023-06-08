@@ -85,4 +85,19 @@ public class FuelQueue {
             System.out.println(passenger.getFullName());
         }
     }
+
+    public int getQueueLength() {
+        int count = 0;
+
+        for (Passenger passenger: this.queue) {
+            if (passenger != null) {
+                count++;
+            }
+            else {
+                break;
+            }
+        }
+
+        return count;
+    }
 }
