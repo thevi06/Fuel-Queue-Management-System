@@ -34,7 +34,7 @@ public class Main {
         System.out.println("108 or STK: View Remaining Fuel Stock.");
         System.out.println("109 or AFS: Add Fuel Stock.");
         System.out.println("110 or IFQ: Income of Fuel");
-        System.out.println("999 or EXT: Exit the Program.");\
+        System.out.println("999 or EXT: Exit the Program.");
 
         outer: while (true) {
             if (FuelStock < 500) {
