@@ -100,4 +100,31 @@ public class FuelQueue {
 
         return count;
     }
+
+    public Passenger servePassenger() {
+        Passenger passenger = this.queue[0];
+
+        for (int i=0; i<this.queue.length-1; i++) {
+            if (queue[i] == null) {
+                break;
+            }
+
+            queue[i] = queue[i+1];
+        }
+
+        this.queue[this.queue.length-1] = null;
+
+        return passenger;
+    }
+    public int getQueueIncome(){
+        int income=0;
+        for (int i=0; i<this.queue.length-1; i++) {
+            if (this.queue[i] == null) {
+                break;
+            }
+            income+=this.queue[i].getRequiredLiters()*430;
+
+        }
+        return income;
+    }
 }
