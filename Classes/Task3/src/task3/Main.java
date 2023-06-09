@@ -128,4 +128,33 @@ public class Main {
         System.out.println("Pump 3: available slots amount is " + Pump3free);
         System.out.println("-------------------------------------------------------------\n");
     }
+
+    //View Empty fuel Queue
+    public static void ViewEmptyQueue(String[] ThePump, int Pump1free, int Pump2free, int Pump3free) {
+        for (int x = 0; x < 6; x++) {
+            if (ThePump[x] == null) {
+                Pump1free++;
+                if (Pump1free == 6) {
+                    System.out.println("Queue 1 is empty");
+                }
+            }
+        }
+        for (int x = 7; x < 13; x++) {
+            if (ThePump[x] == null) {
+                Pump2free++;
+                if (Pump2free == 6) {
+                    System.out.println("Queue 2 is empty");
+                }
+            }
+        }
+
+        for (int x = 14; x < 20; x++) {
+            if (ThePump[x] == null) {
+                Pump3free++;
+                if (Pump3free == 6) {
+                    System.out.println("Queue 3 is empty");
+                }
+            }
+        }
+    }
 }
