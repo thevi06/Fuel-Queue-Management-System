@@ -329,4 +329,102 @@ public class Main {
         }
 
     }
+
+    /*View Customers Sorted in alphabetical order*/
+    public static void SortedNames(String[] ThePump) {
+        Scanner scn = new Scanner(System.in);
+        System.out.println("Which Queue do you want to sort :");
+        int Qnum = scn.nextInt();
+        if (Qnum == 1){
+            String[] Q1temparray = new String[]{"empty", "empty", "empty", "empty", "empty", "empty"};
+            int cnt = 0;
+            for (int y = 0; y < 6; y++) {
+                if (ThePump[y] != null) {
+                    Q1temparray[y] = ThePump[y];
+                    cnt++;
+                }
+            }
+
+            String temp;
+            for (int i = 0; i < cnt; i++) {
+                for (int j = i + 1; j < cnt; j++) {
+                    if (Q1temparray[i].compareTo(Q1temparray[j]) > 0) {
+                        temp = Q1temparray[i];
+                        Q1temparray[i] = Q1temparray[j];
+                        Q1temparray[j] = temp;
+                    }
+                }
+            }
+            for (String name : Q1temparray) {
+                System.out.println(name);
+            }
+        } else if (Qnum==2){
+            String[] Q2temparray = new String[]{"empty", "empty", "empty", "empty", "empty", "empty"};
+            int cnt = 0;
+            for (int y = 7; y < 13; y++) {
+
+                if (ThePump[y] != null) {
+                    Q2temparray[y-7] = ThePump[y];
+                    cnt++;
+                }
+            }
+
+            String temp;
+            for (int i = 0; i < cnt; i++) {
+                for (int j = i + 1; j < cnt; j++) {
+                    if (Q2temparray[i].compareTo(Q2temparray[j]) > 0) {
+                        temp = Q2temparray[i];
+                        Q2temparray[i] = Q2temparray[j];
+                        Q2temparray[j] = temp;
+                    }
+                }
+            }
+            for (String name : Q2temparray) {
+                System.out.println(name);
+            }
+        } else if (Qnum==3){
+            String[] Q3temparray = new String[]{"empty", "empty", "empty", "empty", "empty", "empty"};
+            int cnt = 0;
+            for (int y = 14; y < 20; y++) {
+
+                if (ThePump[y] != null) {
+                    Q3temparray[y-14] = ThePump[y];
+                    cnt++;
+                }
+            }
+
+            String temp;
+            for (int i = 0; i < cnt; i++) {
+                for (int j = i + 1; j < cnt; j++) {
+                    if (Q3temparray[i].compareTo(Q3temparray[j]) > 0) {
+                        temp = Q3temparray[i];
+                        Q3temparray[i] = Q3temparray[j];
+                        Q3temparray[j] = temp;
+                    }
+                }
+            }
+            for (String name : Q3temparray) {
+                System.out.println(name);
+            }
+        }else{
+            System.out.println("invalid input");
+        }
+    }
+    /*Remaining fuel stock*/
+    public static void RemainingFuel() {
+        System.out.println("Remaining Fuel stock is " + FuelStock + " liters");
+    }
+
+    /*add fuel stock*/
+    public static void ADDFuel() {
+        Scanner scn = new Scanner(System.in);
+
+        System.out.println("How many liters do you want to add :");
+        double FuelAmount = scn.nextDouble();
+
+        FuelStock += FuelAmount;
+        System.out.println("Successfully added");
+        System.out.println("Current stock is "+FuelStock+" L");
+
+    }
 }
