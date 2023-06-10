@@ -31,4 +31,25 @@ public class FuelQueue {
             }
         }
     }
+
+    public boolean isFull() {
+        if(queue[5] != null){
+            return true;
+        }
+        return false;
+    }
+
+    public void removePassenger() {
+        if (isEmpty()) {
+            System.out.println("Queue is empty");
+            return;
+        }
+
+        for (int i=this.queue.length-1; i>=0; i--) {
+            if (queue[i] != null) {
+                queue[i] = null;
+                break;
+            }
+        }
+    }
 }
