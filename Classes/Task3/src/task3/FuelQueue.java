@@ -52,4 +52,40 @@ public class FuelQueue {
             }
         }
     }
+
+    public boolean isEmpty() {
+        if (queue[0] == null) {
+            return true;
+        }
+        return false;
+    }
+
+    public void viewPassengers() {
+        if (this.queue[0] == null) {
+            System.out.println(String.format(
+                    "queue %d\n" +
+                            "passenger count: %d\n" +
+                            "passenger list:\n" +
+                            "This queue is empty",
+                    this.id,
+                    getQueueLength()
+            ));
+
+            return;
+        }
+
+        System.out.println(String.format("queue %d\n" +
+                        "passenger count: %d\n" +
+                        "passenger list:",
+                this.id,
+                getQueueLength()
+        ));
+
+        for (Passenger passenger: this.queue) {
+            if (passenger == null) {
+                break;
+            }
+            System.out.println(passenger.getFullName());
+        }
+    }
 }
