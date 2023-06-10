@@ -88,4 +88,40 @@ public class FuelQueue {
             System.out.println(passenger.getFullName());
         }
     }
+
+    public int getQueueLength() {
+        int count = 0;
+
+        for (Passenger passenger: this.queue) {
+            if (passenger != null) {
+                count++;
+            }
+            else {
+                break;
+            }
+        }
+
+        return count;
+    }
+
+    public Passenger servePassenger() {
+        Passenger passenger = this.queue[0];
+
+        for (int i=0; i<this.queue.length-1; i++) {
+            if (queue[i] == null) {
+                break;
+            }
+
+            queue[i] = queue[i+1];
+        }
+
+        if (this.waitingList.isEmpty()) {
+            this.queue[this.queue.length-1] = null;
+        }
+        else {
+            this.queue[this.queue.length] = this.waitingList.remove(0);
+        }
+
+        return passenger;
+    }
 }
